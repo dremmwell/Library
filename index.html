@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnal Library</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="overlay">
+        <div id="form-container" class="form-container blured-rounded">
+            <form action="http://httpbin.org/post" method="post" class="add-book-form" id="add-book-form">
+                <h2>Add a New Book</h2>
+                <input
+                  class="input" type="text"
+                  id="title"
+                  placeholder="Title"
+                  required
+                  maxlength="100"
+                />
+                <input
+                  class="input"
+                  type="text"
+                  id="author"
+                  placeholder="Author"
+                  required
+                  maxlength="100"
+                />
+                <textarea class="input" id="description" placeholder="Quick Description ..." maxlength="600" rows="10" cols="30"></textarea>
+                <input
+                  class="input"
+                  type="number"
+                  id="pages"
+                  placeholder="Pages"
+                  required
+                  max="10000"
+                />
+                <div class="is-read">
+                  <label for="is-read">Have you read it?</label>
+                  <input class="checkbox" type="checkbox" id="isRead" value="isRead" />
+                </div>
+              </form>
+              <button id="submit-btn" class="btn btn-submit" type="submit" form="add-book-form">Submit</button>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="navbar blured">
+            <h1 class="title">Personnal Library</h1>
+            <button id="add-book-btn" class="btn blured-rounded"><h2>+ Add Book</h2></button>
+            <button id="logIn-btn" class="btn blured-rounded"><h2>Log In</h2></button>
+        </div>
+        <div id="library-grid" class="books"> 
+        </div>  
+        <div class="info blured-rounded">
+            <div class="section-title">
+                <h2 class="info-title">Info</h2>
+            </div>
+        </div>   
+    </div>
+</body>
+</html>

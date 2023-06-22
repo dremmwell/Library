@@ -1,0 +1,237 @@
+/* *{
+    border: 1px solid red;
+} */
+
+@font-face {
+    font-family: 'Lato_light';
+    src: url(font/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Lato_medium';
+    src: url(font/Lato-Hairline.ttf);
+}
+
+:root{
+    --lato_light:'Lato_light';
+    --lato_medium:'Lato-medium';
+    --margin: 50px;
+}
+
+body{
+    background-image: url(img/5432755.jpg);
+    background-size:cover;
+    background-position: center; 
+    background-repeat: repeat-x;   
+    background-repeat: repeat-y;   
+    font-family: var(--lato_light), sans-serif;
+    overflow: auto; 
+    padding: 0;
+    margin: 0;
+}
+
+.main-container{
+    width: 100%;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 1fr 260px;
+    gap:var(--margin);
+}
+
+.navbar{
+    grid-area: 1 / 1 / span 1 / span 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: var(--margin);
+    padding-right: var(--margin);
+}
+
+.books{
+    margin-left: var(--margin);
+    display: grid;
+    justify-content: space-around;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 40px;
+    grid-auto-flow: row;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.book-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 10px;
+    width: 400px;
+}
+
+.book-card:hover {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s;
+    border: 2px solid lightblue;
+}
+
+.info{
+    margin-right: var(--margin);
+    height: 600px;
+    position: sticky;
+    top: var(--margin);
+}
+
+.btn{
+    padding: 5px 30px;
+    font-family: var(--lato_light), sans-serif;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid #f89575;
+}
+
+h2{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+.blured{
+    box-shadow: 0 5px 30px rgba(35, 35, 35, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    color: black;
+}
+
+.blured-rounded{
+    border-radius: 15px;;
+    box-shadow: 0 5px 30px rgba(35, 35, 35, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    color: black;
+}
+
+@media only screen and (max-width: 1800px){
+    .books {
+        grid-template-columns: repeat(3, 1fr);
+      }
+}
+
+@media only screen and (max-width: 1460px){
+    .books {
+        grid-template-columns: repeat(2, 1fr);
+      }
+}
+
+@media only screen and (max-width: 1160px){
+    .books {
+        grid-template-columns: repeat(1, 1fr);
+      }
+}
+
+#overlay{
+    position: fixed;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 2;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(img/5432755.jpg);
+    cursor: default;
+    width:fit-content;
+    height:fit-content;
+    padding: 20px;
+}
+
+.add-book-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-right: 30px;
+    margin-left: 30px; 
+}
+
+.input:focus{
+    outline-color: #f89575;
+}
+
+.btn-submit{
+    padding: 10px 64px;
+    border-radius: 10px;
+    transition: filter 0.15s ease-in-out;
+    justify-content: center;
+    width: fit-content;
+    background-image: url(img/5432755.jpg);
+    font-weight: 1000;
+    font-size: larger;
+    margin-top: 20px;
+}
+
+.btn-submit:hover{
+    transition: all 0.2s;
+    border: 2px solid lightblue;
+    color: black;
+}
+
+h3{
+    font-weight: 1000;
+    font-size: larger;
+}
+
+label{
+    font-weight: 800;
+    font-size: large;
+}
+
+.checkbox{
+    width: 15px;
+    height: 15px;
+    accent-color: white;
+}
